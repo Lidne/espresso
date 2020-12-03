@@ -39,6 +39,10 @@ class Espresso(QMainWindow):
             category = 'roast'
         elif category == 'Вид(молотый/взёрнах)':
             category = 'kind'
+            if item == 'в зёрнах':
+                item = 1
+            elif item == 'молотый':
+                item = 0
         elif category == 'Описание вкуса':
             category = 'taste'
         elif category == 'Цена':
