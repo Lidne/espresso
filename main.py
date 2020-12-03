@@ -9,7 +9,7 @@ class Espresso(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('main.ui', self)
-        self.con = sqlite3.connect('coffee.db')
+        self.con = sqlite3.connect('coffee.sqlite')
         self.search.clicked.connect(self.diplay_info)
 
     def diplay_info(self):
@@ -27,6 +27,7 @@ class Espresso(QMainWindow):
             self.taste.setText(str(search_result[4]))
             self.value.setText(str(search_result[5]))
             self.volume.setText(str(search_result[6]))
+            self.log.setText('')
         except Exception:
             self.log.setText('Нет данных по этому запросу')
 
